@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oliver Maynard Portfolio</title>
+    <style>
+        /* --- 1. Variables & Global Styles --- */
+        :root {
+            --bg-color: #121212;       /* Very dark grey, almost black */
+            --text-color: #e0e0e0;     /* Off-white for readability */
+            --accent-color: #ffffff;   /* Pure white for bold text/headers */
+            --link-color: #81ecec;     /* Subtle cyan for links */
+            --border-color: #333333;   /* Dark grey for lines */
+            --font-stack: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        /* --- 2. Layout Container --- */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- 3. Typography --- */
+        h1, h2, h3, h4 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h3 { font-size: 2.5rem; letter-spacing: -1px; }
+        
+        p { margin-bottom: 1.5rem; max-width: 700px; }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--link-color);
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        /* --- 4. Project Table (The Core Feature) --- */
+        .project-section { margin-top: 4rem; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        th {
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px 15px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 15px;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        /* --- 5. Social Links (Footer) --- */
+        .socials {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- 6. Mobile Responsiveness --- */
+        @media (max-width: 750px) {
+            .container { padding: 2rem 1.5rem; }
+            h3 { font-size: 2rem; }
+
+            /* Force table to look like a list on mobile */
+            thead { display: none; } /* Hide headers */
+            tr { 
+                display: block; 
+                margin-bottom: 2rem; 
+                border: 1px solid var(--border-color);
+                border-radius: 4px;
+                padding: 1rem;
+            }
+            td { 
+                display: block; 
+                border: none; 
+                padding: 5px 0; 
+            }
+            /* Add labels before content so users know what's what */
+            td:nth-of-type(1):before { content: "Title: "; font-weight: bold; color: #888; }
+            td:nth-of-type(2):before { content: "Summary: "; font-weight: bold; color: #888; }
+            td:nth-of-type(3):before { content: "Link: "; font-weight: bold; color: #888; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h3>Oliver Maynard</h3>
+            <p>
+                I am a Nuclear Engineering student at North Carolina State University interested in numerical methods, scientific machine learning, and time-series analysis.
+            </p>
+            <p>
+                Coursework keeps me busy, but in my free time I enjoy reading, writing, working out, and programming. I try to keep this page up-to-date with work I do, sharing what others may find insightful or engaging.
+            </p>
+        </header>
+
+        <section class="project-section">
+            <h4>Personal Projects</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">Title</th>
+                        <th style="width: 60%">Summary</th>
+                        <th style="width: 15%">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>On Negative and Larger than One Probabilities</strong></td>
+                        <td>I recently became interested in negative and larger than one probabilities. I explore these ideas here.</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="socials">
+            <a href="https://github.com/oamaynar">GitHub</a>
+            <a href="https://www.linkedin.com/in/oamaynard/">LinkedIn</a>
+            <a href="mailto:oamaynar@gmail.com">Email</a>
+        </div>
+
+        <div class="footer-note">
+            <p>&copy; 2026 Oliver Maynard</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
